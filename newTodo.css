@@ -1,0 +1,136 @@
+body {
+    font-family: 'maven pro', sans-serif;
+    background: #141E30;
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);
+    background: linear-gradient(to top, #243B55, #141E30);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);
+    background: linear-gradient(to top, #243B55, #141E30);
+    height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-container input {
+    text-align: center;
+    border: 1px solid #141E30;
+    background-color: #CCCCCC;
+    border-radius: 25px;
+    color: black;
+    background-color: none;
+    height: 3rem;
+    width: 20rem;
+    padding: 10px;
+}
+
+.form-container button {
+    border: 1px solid #A5A5A5;
+    border-radius: 50%;
+    color: black;
+    background-color: #CCCCCC;
+    height: 3rem;
+    padding: 0rem 1rem;
+}
+
+.main-button:hover {
+    background-color: #cccccc94;
+    transition: 0.5s;
+}
+
+.container-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0rem;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.append-container {
+    border-radius: 25px;
+    padding: 1.2rem;
+    margin: 1rem 0rem;
+    outline: none;
+}
+
+.header-text {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    color: white;
+}
+
+.append-input {
+    background-color: whitesmoke;
+    border: none;
+    width: 17rem;
+    color: black;
+}
+
+.append-button:hover {
+    background-color: #CCCCCC;
+    transition: 0.5s;
+}
+
+.removeButton,.editButton {
+    background-color: #141E30;
+    border-radius: 50%;
+    border: 1px solid #141E30;
+    color: white;
+    height: 3rem;
+    padding: 0rem 1rem;
+}
+
+.listInput {
+    background-color: #141E30;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    height: 3rem;
+}
+
+input[type="text"]:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: 0 none
+}
+
+@media only screen and (max-width: 578px) {
+    .form-container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .listInput {
+        width: 13rem;
+    }
+
+    .form-container input {
+        width: 16rem;
+    }
+}

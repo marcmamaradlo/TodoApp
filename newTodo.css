@@ -44,9 +44,11 @@ body {
     padding: 0rem 1rem;
 }
 
-.main-button:hover {
-    background-color: #cccccc94;
-    transition: 0.5s;
+.form-container button:hover {
+    background-color: #141E30;
+    color: #CCCCCC;
+    border: 1px solid #141E30;
+    transition: 400ms;
 }
 
 .container-heading {
@@ -65,10 +67,8 @@ body {
 }
 
 .append-container {
-    border-radius: 25px;
-    padding: 1.2rem;
+    display: flex;
     margin: 1rem 0rem;
-    outline: none;
 }
 
 .header-text {
@@ -77,40 +77,42 @@ body {
     color: white;
 }
 
-.append-input {
-    background-color: whitesmoke;
-    border: none;
-    width: 17rem;
-    color: black;
-}
-
 .append-button:hover {
     background-color: #CCCCCC;
     transition: 0.5s;
 }
 
 .removeButton,.editButton {
+    align-items: center;
+    justify-content: center;
     background-color: #141E30;
     border-radius: 50%;
     border: 1px solid #141E30;
     color: white;
-    height: 3rem;
-    padding: 0rem 1rem;
+    padding: 1rem;
+}
+
+.removeButton:hover,
+.editButton:hover {
+    background-color: #CCCCCC;
+    color: #141E30;
+    transition: 400ms;
 }
 
 .listInput {
     background-color: #141E30;
+    border: 1px solid #141E30;
     padding: 10px;
     border-radius: 25px;
     text-align: center;
-    color: white;
+    color: whitesmoke;
     height: 3rem;
 }
 
-input[type="text"]:focus {
-    border-color: none;
+input[type="text"]:focus, button:focus {
+    border-color: white;
     box-shadow: none;
-    outline: 0 none
+    outline: 0 none;
 }
 
 @media only screen and (max-width: 578px) {
@@ -123,9 +125,6 @@ input[type="text"]:focus {
         width: 100%;
     }
 
-}
-
-@media only screen and (max-width: 375px) {
     .listInput {
         width: 13rem;
     }
@@ -133,4 +132,5 @@ input[type="text"]:focus {
     .form-container input {
         width: 16rem;
     }
+
 }

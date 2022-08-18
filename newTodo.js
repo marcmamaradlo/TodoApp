@@ -2,9 +2,7 @@
 
 const form = document.querySelector('#form');
 const inputToAdd = document.querySelector('#inputToAdd');
-const mainContainer = document.querySelector('#mainContainer');
 const container = document.querySelector('#container');
-const taskContainer = document.querySelector('#task-container');
 
 inputToAdd.addEventListener('click', () => {
     inputToAdd.value = '';
@@ -23,7 +21,6 @@ form.addEventListener('submit', (e) => {
 
 function createContainerDiv() {
     const newDiv = document.createElement('div');
-    newDiv.setAttribute('class', 'task-container');
     newDiv.classList.add('append-container');
     return newDiv;
 }
@@ -35,28 +32,43 @@ function createListInput() {
     listInput.setAttribute('readonly', 'readonly');
     listInput.setAttribute('class', 'listInput');
     listInput.setAttribute('type', 'text');
-    listInput.classList.add('append-input')
     return listInput;
 }
 
 function createEditButton() {
-    const editButton = document.createElement('button');
-    const icon = document.createElement('i');
-    icon.classList.add('fas', 'fa-solid', 'fa-pen')
-    editButton.append(icon);
-    editButton.setAttribute('class', 'editButton');
-    editButton.classList.add('append-button');
-    return editButton;
+    const editIcon = document.createElement('i');
+    editIcon.classList.add('fas', 'fa-solid', 'fa-pen', 'editButton')
+    return editIcon;
 }
 
 function createRemoveButton() {
-    const removeButton = document.createElement('button');
-    const icon = document.createElement('i');
-    icon.classList.add('fas', 'fa-solid', 'fa-trash');
-    removeButton.append(icon);
-    removeButton.setAttribute('class', 'removeButton');
-    removeButton.classList.add('append-button');
-    return removeButton;
+    const removeIcon = document.createElement('i');
+    removeIcon.classList.add('fas', 'fa-solid', 'fa-trash', 'removeButton');
+    return removeIcon;
+}
+
+// function createRemoveButton() {
+//     const removeButton = document.createElement('button');
+//     const icon = document.createElement('i');
+//     icon.classList.add('fas', 'fa-solid', 'fa-trash');
+//     removeButton.append(icon);
+//     removeButton.setAttribute('class', 'removeButton');
+//     return removeButton;
+// }
+
+function editButtonAction(e) {
+    const parentElement = e.parentNode;
+    const toEdit = parentElement.querySelector('.listInput');
+    console.log(parentElement);
+    console.log(toEdit);
+    toEdit.focus();
+    toEdit.removeAttribute('readonly', 'readonly');
+}
+
+function removeButtonAction(e) {
+    const parentElement = e.parentNode;
+    console.log(parentElement, e);
+    parentElement.remove();
 }
 
 function initEventListener(editButton, removeButton) {
@@ -69,24 +81,12 @@ function initEventListener(editButton, removeButton) {
     });
 }
 
-function editButtonAction(editButton) {
-    const parentElement = editButton.parentNode;
-    const toEdit = parentElement.querySelector('.listInput');
-    toEdit.focus();
-    toEdit.removeAttribute('readonly');
-}
-
-function removeButtonAction(removeButton) {
-    const parentElement = removeButton.parentNode;
-    parentElement.remove();
-}
-
 function sampleAppend() {
     const newDiv = createContainerDiv();
     const listInput = createListInput();
-    listInput.value = 'Shopping';
     const editButton = createEditButton();
     const removeButton = createRemoveButton();
+    listInput.value = 'Shopping';
     newDiv.append(listInput, editButton, removeButton);
     container.append(newDiv);
     initEventListener(editButton, removeButton);
